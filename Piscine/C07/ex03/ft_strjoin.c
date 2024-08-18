@@ -6,7 +6,7 @@
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:10:52 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/18 19:47:47 by rfrank           ###   ########.fr       */
+/*   Updated: 2024/08/18 21:51:44 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,75 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+int	ft_strlen(char *str)
 {
-	char	*empty;
+	int	i;
 
-	empty = NULL;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+int	ft_calculate_total_len(int size, char **strs, char *sep)
+{
+	int	total_len;
+	int	sep_len;
+	int	i;
+
+	total_len = 0;
+	sep_len = ft_strlen(sep);
+	i = 0;
+	while (i < size)
+	{
+		total_len += ft_strlen(strs[i]);
+		if (i < size - 1)
+			total_len += sep_len;
+		i++;
+	}
+	return (total_len);
+}
+
+char	*size0exception(int size)
+{
+	char	*result;
+
 	if (size == 0)
 	{
-		return (empty);
+		result = malloc(1);
+		if (!result)
+			return (NULL);
+		*result = '\0';
 	}
-	while (*strs && size > 0)
+	return (result);
+}
+
+char	*ft_strjoin(int size, char **strs, const char *sep)
+{
+	char	*result;
+	int		total_len;
+	int		i;
+
+	result = NULL;
+	i = 0;
+	result = size0exception(size);
+	if (result)
+		return (result);
+	total_len = ft_calculate_total_len(size, strs, sep);
+	result = malloc(total_len + 1);
+	if (!result)
+		return (NULL);
+	result[0] = '\0';
+	while (i < size)
 	{
-		ft_strcat(*strs, sep);
-		size--;
+		ft_strcat(result, strs[i]);
+		if (i < size - 1)
+			ft_strcat(result, sep);
+		i++;
 	}
-	return (*strs);
+	return (result);
 }
 
 int	main(void)
