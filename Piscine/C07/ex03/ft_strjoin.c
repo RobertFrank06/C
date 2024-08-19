@@ -6,7 +6,7 @@
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:10:52 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/18 21:51:44 by rfrank           ###   ########.fr       */
+/*   Updated: 2024/08/19 12:52:11 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ char	*size0exception(int size)
 			return (NULL);
 		*result = '\0';
 	}
-	return (result);
+	return (0);
 }
 
-char	*ft_strjoin(int size, char **strs, const char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*result;
 	int		total_len;
@@ -103,25 +103,4 @@ char	*ft_strjoin(int size, char **strs, const char *sep)
 		i++;
 	}
 	return (result);
-}
-
-int	main(void)
-{
-	char	*strs[3];
-	char	*result;
-
-	strs[0] = "hello";
-	strs[1] = "hello1";
-	strs[2] = "hello2";
-	result = ft_strjoin(3, strs, "||");
-	if (result)
-	{
-		printf("%s\n", result);
-		free(result);
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return (0);
 }
