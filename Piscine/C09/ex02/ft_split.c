@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:24:15 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/20 16:22:49 by rfrank           ###   ########.fr       */
+/*   Created: 2024/08/20 14:54:13 by rfrank            #+#    #+#             */
+/*   Updated: 2024/08/20 15:47:49 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_factorial(int nb)
+#include <stdlib.h>
+
+char	**ft_split(char *str, char *charset)
 {
-	if (nb == 0)
-		return (1);
-	else if (nb < 0)
-		return (0);
-	return (nb * ft_recursive_factorial(nb--));
+	
+}
+
+void	splitstring(char *str, char *charset)
+{
+	
 }
