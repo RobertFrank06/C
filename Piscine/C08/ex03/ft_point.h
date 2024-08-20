@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 16:03:17 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/20 11:41:23 by rfrank           ###   ########.fr       */
+/*   Created: 2024/08/20 13:40:35 by rfrank            #+#    #+#             */
+/*   Updated: 2024/08/20 13:47:57 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-int	ft_strlen(char *str)
+typedef struct s_point
 {
-	int	len;
+	int	x;
+	int	y;
+}		t_point;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+void	set_point(t_point *point);
 
-int	main(int argc, char **argv)
-{
-	argc = ft_strlen(*argv);
-	write(1, *argv, argc);
-	write(1, "\n", 1);
-}
+#endif

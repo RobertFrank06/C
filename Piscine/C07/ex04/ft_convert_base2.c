@@ -6,32 +6,17 @@
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 19:01:02 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/19 20:26:01 by rfrank           ###   ########.fr       */
+/*   Updated: 2024/08/19 20:51:03 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 int		ft_strlen(char *str);
-int		calculate_num_len(int nbr, int base_len);
 char	*handle_zero_case(char *base);
 char	*create_result_str(int nbr, int num_len, char *base);
 char	*convert_to_base(int nbr, char *base);
-int		char_to_value(char c, char *base);
-
-int	char_to_value(char c, char *base)
-{
-	int	i;
-
-	i = 0;
-	while (base[i])
-	{
-		if (base[i] == c)
-			return (i);
-		i++;
-	}
-	return (-1);
-}
+int		ft_atoi_base(char *str, char *base);
 
 int	ft_strlen(char *str)
 {
@@ -41,25 +26,6 @@ int	ft_strlen(char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
-}
-
-int	calculate_num_len(int nbr, int base_len)
-{
-	int		num_len;
-	long	tmp_nbr;
-
-	num_len = 0;
-	tmp_nbr = nbr;
-	if (nbr == 0)
-		return (1);
-	if (nbr < 0)
-		num_len++;
-	while (tmp_nbr != 0)
-	{
-		num_len++;
-		tmp_nbr /= base_len;
-	}
-	return (num_len);
 }
 
 char	*handle_zero_case(char *base)
@@ -99,4 +65,36 @@ char	*create_result_str(int nbr, int num_len, char *base)
 	if (nbr < 0)
 		result[0] = '-';
 	return (result);
+}
+
+char	*convert_to_base(int nbr, char *base)
+{
+	int	base_len;
+	int	num_len;
+
+	base_len = ft_strlen(base);
+	num_len = calculate_num_len(nbr, base_len);
+	return (create_result_str(nbr, num_len, base));
+}
+
+int	ft_atoi_base(char *str, char *base)
+{
+	int	value;
+	int	endresult;
+	int	minus;
+
+	minus = 1;
+	endresult = 0;
+	if (!is_valid_base(base))
+		return (0);
+	str = skipwhitespaceandplus(str, &minus);
+	while (*str)
+	{
+		value = char_to_value(*str, base);
+		if (value == -1)
+			return (0);
+		endresult = endresult * ft_strlen(base) + value;
+		str++;
+	}
+	return (minus * endresult);
 }

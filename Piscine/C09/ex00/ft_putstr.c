@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 16:03:17 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/20 11:41:23 by rfrank           ###   ########.fr       */
+/*   Created: 2024/08/03 16:08:24 by rfrank            #+#    #+#             */
+/*   Updated: 2024/08/04 18:25:05 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+void	ft_putstr(char *str)
 {
-	int	len;
+	int	size;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-int	main(int argc, char **argv)
-{
-	argc = ft_strlen(*argv);
-	write(1, *argv, argc);
-	write(1, "\n", 1);
+	size = 0;
+	while (str[size] != '\0')
+	{
+		size++;
+	}
+	write(1, str, size);
 }

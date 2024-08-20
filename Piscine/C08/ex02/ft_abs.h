@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 16:03:17 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/20 11:41:23 by rfrank           ###   ########.fr       */
+/*   Created: 2024/08/20 13:21:29 by rfrank            #+#    #+#             */
+/*   Updated: 2024/08/20 13:36:24 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-int	ft_strlen(char *str)
-{
-	int	len;
+# define ABS(Value) (((Value) < 0) * -(Value) + ((Value) >= 0) * (Value))
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-int	main(int argc, char **argv)
-{
-	argc = ft_strlen(*argv);
-	write(1, *argv, argc);
-	write(1, "\n", 1);
-}
+#endif

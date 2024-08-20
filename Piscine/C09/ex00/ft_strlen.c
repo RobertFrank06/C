@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/18 16:03:17 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/20 11:41:23 by rfrank           ###   ########.fr       */
+/*   Created: 2024/08/03 16:48:21 by rfrank            #+#    #+#             */
+/*   Updated: 2024/08/03 18:23:38 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 int	ft_strlen(char *str)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-int	main(int argc, char **argv)
-{
-	argc = ft_strlen(*argv);
-	write(1, *argv, argc);
-	write(1, "\n", 1);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
