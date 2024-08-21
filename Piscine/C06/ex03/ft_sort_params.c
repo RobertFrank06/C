@@ -6,34 +6,54 @@
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 17:59:04 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/19 16:55:58 by rfrank           ###   ########.fr       */
+/*   Updated: 2024/08/21 14:47:18 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_swap(char **a, char **b)
+{
+	char	*temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	while (*s1 && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+}
+
 void	ft_sort_arguments(char **tab, int size)
 {
-	int		first;
-	char	*tmp;
-	int		loop;
+	int	i;
+	int	j;
+	int	swapped;
 
-	first = 0;
-	loop = 0;
-	while (loop < size - 1)
+	i = 0;
+	while (i < size - 1)
 	{
-		first = 0;
-		while (first < size - loop - 1)
+		j = 0;
+		swapped = 0;
+		while (j < size - i - 1)
 		{
-			if (*(tab[first]) > *(tab[first + 1]))
+			if (ft_strcmp(tab[j], tab[j + 1]) > 0)
 			{
-				tmp = tab[first];
-				tab[first] = tab[first + 1];
-				tab[first + 1] = tmp;
+				ft_swap(&tab[j], &tab[j + 1]);
+				swapped = 1;
 			}
-			first++;
+			j++;
 		}
-		loop++;
+		if (swapped == 0)
+			break ;
+		i++;
 	}
 }
 
@@ -42,8 +62,10 @@ int	ft_strlen(char *str)
 	int	len;
 
 	len = 0;
-	while (str[len])
+	while (str[len] != '\0')
+	{
 		len++;
+	}
 	return (len);
 }
 
