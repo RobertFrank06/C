@@ -6,11 +6,10 @@
 /*   By: rfrank <rfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:10:52 by rfrank            #+#    #+#             */
-/*   Updated: 2024/08/19 12:52:11 by rfrank           ###   ########.fr       */
+/*   Updated: 2024/08/21 14:50:16 by rfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 char	*ft_strcat(char *dest, char *src)
