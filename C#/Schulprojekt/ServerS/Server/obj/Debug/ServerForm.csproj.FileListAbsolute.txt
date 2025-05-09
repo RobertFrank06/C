@@ -1,0 +1,10 @@
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\ServerForm.csproj.AssemblyReference.cache
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\Server.Form1.resources
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\ServerForm.csproj.GenerateResource.cache
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\ServerForm.csproj.CoreCompileInputs.cache
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\Server.exe
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\obj\Debug\Server.pdb
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\bin\Debug\Server.exe.config
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\bin\Debug\Server.exe
+C:\Users\rober\Desktop\Coding\C\C#\Schulprojekt\ServerS\Server\bin\Debug\Server.pdb
